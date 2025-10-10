@@ -51,6 +51,19 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define KEYBALL_CPI_DEFAULT 500         // マウス速度 (default: 500)
 #define KEYBALL_SCROLL_DIV_DEFAULT 5    // スクロール速度 (default: 4)
 
+// --- スクロールスナップ設定 ---
+// スナップ＝縦方向だけに制限する挙動。
+// 下記の設定で「自由スクロール（縦横どちらでも）」をデフォルト化。
+#define KEYBALL_SCROLLSNAP_ENABLE 1              // スナップ機能を有効化（ONのままでOK）
+#define KEYBALL_SCROLLSNAP_TENSION_THRESHOLD 5   // Freeモードへ移行する横動作閾値を低めに（デフォルト12→5）
+#define KEYBALL_SCROLLSNAP_RESET_TIMER 200       // Free→Snapに戻るまでの無操作時間(ms)
+#define KEYBALL_SCROLLBALL_INHIVITOR 50          // スクロールモード切替直後の無効時間（デフォルト値）
+
+// 起動時から完全に自由スクロールにしたい場合は、
+// 下記を代わりに使ってもOK：
+// #define KEYBALL_SCROLLSNAP_ENABLE 0
+
+
 // --- レイヤ追加 ---
 #define DYNAMIC_KEYMAP_LAYER_COUNT 6    // デフォルト4 → 6に拡張
 
