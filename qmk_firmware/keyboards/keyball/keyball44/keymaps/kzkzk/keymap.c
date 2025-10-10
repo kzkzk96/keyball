@@ -181,7 +181,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 // レイヤ処理 / OLED表示
 // ============================================================
 layer_state_t layer_state_set_user(layer_state_t state) {
-    keyball_set_scroll_mode(get_highest_layer(state) == 5);
+    // 自動スクロールの無効化
+    // keyball_set_scroll_mode(get_highest_layer(state) == 5);
     return state;
 }
 
