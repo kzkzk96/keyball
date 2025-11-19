@@ -67,7 +67,7 @@ void process_combo_event(uint16_t combo_index, bool pressed) {
 
         case COMBO_JK:  // 左クリック
             if (pressed) {
-                clear_keyboard();
+                //clear_keyboard();
                 register_code(KC_BTN1);
             } else {
                 unregister_code(KC_BTN1);
@@ -76,7 +76,7 @@ void process_combo_event(uint16_t combo_index, bool pressed) {
 
         case COMBO_KL:  // 右クリック
             if (pressed) {
-                clear_keyboard();
+                //clear_keyboard();
                 register_code(KC_BTN2);
             } else {
                 unregister_code(KC_BTN2);
@@ -84,13 +84,13 @@ void process_combo_event(uint16_t combo_index, bool pressed) {
             break;
 
         case COMBO_JL:  // スクロールモード
-            clear_keyboard();
+            //clear_keyboard();
             keyball_set_scroll_mode(pressed);
             break;
 
         case COMBO_UI:  // 進む
             if (pressed) {
-                clear_keyboard();
+                //clear_keyboard();
                 if (is_keyboard_left()) {
                     tap_code(KC_BTN5);   // 左側＝Windows
                 } else {
@@ -103,7 +103,7 @@ void process_combo_event(uint16_t combo_index, bool pressed) {
 
         case COMBO_IO:  // 戻る
             if (pressed) {
-                clear_keyboard();
+                //clear_keyboard();
                 if (is_keyboard_left()) {
                     tap_code(KC_BTN4);   // 左側＝Windows
                 } else {
@@ -116,14 +116,14 @@ void process_combo_event(uint16_t combo_index, bool pressed) {
 
         case COMBO_VB_EISU: // V+B → 英数
             if (pressed) {
-                clear_keyboard();
+                //clear_keyboard();
                 tap_code(KC_LNG2);
             }
             break;
 
         case COMBO_NM_KANA: // N+M → かな
             if (pressed) {
-                clear_keyboard();
+                //clear_keyboard();
                 tap_code(KC_LNG1);
             }
             break;
