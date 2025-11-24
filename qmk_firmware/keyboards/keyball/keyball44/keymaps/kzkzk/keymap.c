@@ -131,6 +131,27 @@ void process_combo_event(uint16_t combo_index, bool pressed) {
 }
 
 // ============================================================
+// NumLock 起動時強制ON（Windows用）
+// ============================================================
+
+bool numlock_checked = false;
+
+void matrix_scan_user(void) {
+    // 一度だけチェック
+    if (!numlock_checked) {
+        uint8_t leds = host_keyboard_leds();
+
+        // NumLock が OFFなら ON にする
+        if (!(leds & (1 << USB_LED_NUM_LOCK))) {
+            tap_code(KC_NUM_LOCK);
+        }
+
+        numlock_checked = true;
+    }
+}
+
+
+// ============================================================
 // キーマップ定義
 // ============================================================
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
