@@ -50,10 +50,10 @@ uint16_t get_combo_term(uint16_t index, combo_t *combo) {
         case COMBO_JL:
         case COMBO_VB_EISU:
         case COMBO_NM_KANA:
-            return 60;  // よく使う同時押しは余裕を持たせる
+            return 85;  // よく使う同時押しは余裕を持たせる
         case COMBO_UI:
         case COMBO_IO:
-            return 45;  // 戻る／進むはやや短め
+            return 50;  // 戻る／進むはやや短め
         default:
             return COMBO_TERM;  // デフォルト（30）
     }
