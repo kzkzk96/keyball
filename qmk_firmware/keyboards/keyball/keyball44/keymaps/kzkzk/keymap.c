@@ -137,12 +137,11 @@ void process_combo_event(uint16_t combo_index, bool pressed) {
 bool numlock_checked = false;
 
 void matrix_scan_user(void) {
-    // 一度だけチェック
     if (!numlock_checked) {
         uint8_t leds = host_keyboard_leds();
 
-        // NumLock が OFFなら ON にする
-        if (!(leds & (1 << USB_LED_NUM_LOCK))) {
+        // NumLock が OFF なら ON にする
+        if (!(leds & HOST_LED_NUM_LOCK)) {
             tap_code(KC_NUM_LOCK);
         }
 
